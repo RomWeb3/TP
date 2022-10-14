@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+*, *::before, *::after {    
+    margin: 0;    
+    padding: 0;    
+    box-sizing: border-box;    
+    list-style: none;    
+    text-decoration: none;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    /* border: 1px solid black; */
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 120rem;
+    padding-bottom: 2rem;
+}
+
+.headerDiv {
+    display: flex;
+    gap: 4rem;
+}
+
+header .logo {
+    height: 7.5rem;
+    width: 7.5rem;
+}
+
+.phone-number-header, .work-time-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 20.5rem;
+}
+
+.phone-number-header p, .work-time-header p {
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 1.3rem;
+    margin-left: 1.5rem;
+}
+
+.phone-number-header {
+    border-right: 1px solid lightgrey;
+}
+
+header button {
+    background: #ffe718;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    width: 100%;
+    max-width: 20.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+header button i {
+    margin-right: 0.75rem;
+}
+
+/* Nav Menu */
+
+nav {
+    position: absolute;
+    top: 7.25rem;
+    width: 100%;
+    max-width: 120rem;
+    background: #222931;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav li {
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+nav ul li:nth-child(1) {
+    background: #ffe718;
+}
+
+nav ul li:nth-child(1) a {
+    color: #222931;
+}
+
+nav ul li:hover {
+    background: #ffe718;
+    cursor: pointer;
+}
+
+nav ul li:hover a {
+    color: #222931;
+}
+
+/* Main content */
+
+
+.main-image {
+    height: 60rem;
+    width: 100vw;
+    background: url(./images/PeleArticle.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    box-shadow: inset 1px 1px 10px 1000px rgba(0, 0, 0, 0.353);
+}
+
+.content {
+    width: 100%;
+    max-width: 120rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 60rem;
+    padding: 2.5rem;
+    color: white;
+}
+
+.separator {
+    width: 2rem;
+    border-top: 4px solid #ffe718;
+    margin-bottom: 2rem;
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+}
+
+.content h2 {
+    font-size: 3.75rem;
+    font-weight: 700;
+    max-width: 40rem;
+    margin-bottom: 4rem;
+}
+
+.wrapBtn {
+    display: flex;
+    gap: 2rem;
+}
+
+.content button {
+    background: #ffe718;
+    border: none;
+    padding: 1rem 2.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: inherit;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.content button:nth-child(2) {
+    background: white;
+}
+
+.content button:hover {
+    background: #222931;
+    color: white;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5rem 0;
+}
+
+.stats svg {
+    height: 4.5rem;
+    width: 4.5rem;
+    fill: #91999f;
+}
+
+.stats p {
+    font-size: 2rem;
+    
+}
+
+.stats b {
+    font-size: 3rem;
+}
+
+
+/* container  */
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #f8f9f9;
+    padding: 6rem;
+}
+
+.terrassement, .assainissement, .vrd {
+    max-width: 32rem;
+}
+
+.container img {
+    height: 25rem;
+    width: 34rem;
+}
+
+.container h3 {
+    margin: 3.5rem 0 1.5rem 0;
+    font-size: 2.5rem;
+}
+
+.container p {
+    font-size: 1.45rem;
+    margin-bottom: 2rem;
+}
+
+.container button {
+    background: #ffe718;
+    border: none;
+    padding: 1rem 2.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.container button:hover {
+    background: #222931;
+    color: white;
+}
