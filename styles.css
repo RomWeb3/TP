@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap');
 
 *, *::before, *::after {    
     margin: 0;    
@@ -6,9 +6,6 @@
     box-sizing: border-box;    
     list-style: none;    
     text-decoration: none;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
     /* border: 1px solid black; */
 }
@@ -28,6 +25,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
 }
 
 /* Header */
@@ -79,6 +77,11 @@ header button {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 1.2rem;
+}
+
+header button:hover {
+    background: #222931;
+    color: white;
 }
 
 header button i {
@@ -141,12 +144,12 @@ nav ul li:hover a {
     background-position: center;
     display: flex;
     justify-content: center;
-    box-shadow: inset 1px 1px 10px 1000px rgba(0, 0, 0, 0.353);
+    box-shadow: inset 1px 1px 10px 1000px rgba(0, 0, 0, 0.3);
 }
 
 .content {
     width: 100%;
-    max-width: 120rem;
+    max-width: 115rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -202,20 +205,39 @@ nav ul li:hover a {
 
 .stats {
     display: flex;
+    justify-content: center;
+    padding: 5rem 3rem;
+}
+
+.wrap-stats {
+    display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 5rem 0;
+    width: 100%;
+    max-width: 120rem;
+}
+
+.chantiers, .clients-satisfaits, .engins, .experience {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .stats svg {
     height: 4.5rem;
     width: 4.5rem;
+    fill: #aeb6be;
+    margin-right: 1rem;
+}
+
+.stats svg:hover {
     fill: #91999f;
 }
 
 .stats p {
-    font-size: 2rem;
-    
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
 .stats b {
@@ -227,10 +249,17 @@ nav ul li:hover a {
 
 .container {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
     background: #f8f9f9;
     padding: 6rem;
+}
+
+.wrap-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 115rem;
 }
 
 .terrassement, .assainissement, .vrd {
@@ -265,4 +294,157 @@ nav ul li:hover a {
 .container button:hover {
     background: #222931;
     color: white;
+}
+
+/* bandereau CTA */
+
+.bandereau {
+    background: #ffe718;
+    color: #222931;
+    padding: 5.5rem 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5.75rem;
+}
+
+.wrap-bandereau {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 115rem;
+}
+
+.bandereau h4 {
+    font-size: 3rem;
+}
+
+.bandereau p {
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+.bandereau button {
+    background: #fff;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    width: 100%;
+    max-width: 20.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.bandereau button i {
+    margin-right: 1rem;
+}
+
+.bandereau button:hover {
+    background: #222931;
+    color: white;
+}
+
+/* Why you shloud trust us  */
+
+.trust {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.wrap-trust {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    max-width: 115rem;
+}
+
+.garantie, .devis, .experience-trust {
+    border: 1px solid lightgray;
+    padding: 3.5rem;
+    width: 36rem;
+    height: 28rem;
+}
+
+.trust svg {
+    height: 5rem;
+    width: 5rem;
+}
+
+.trust h4 {
+    font-size: 2rem;
+    color: #222931;
+    margin: 1rem 0;
+}
+
+.trust p {
+    font-size: 1.45rem;
+}
+
+.trust p:hover {
+    scale: 1.1;
+}
+
+.trust svg {
+    fill: #aeb6be;
+}
+
+.trust svg:hover {
+    fill: #91999f;
+}
+
+
+
+/* Footer */
+
+footer {
+    background: #f8f9f9;
+    padding: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5.75rem;
+}
+
+.wrap-footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    max-width: 117.5rem;
+}
+
+footer img {
+    height: 7.5rem;
+    width: 7.5rem;
+}
+
+footer ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+footer a {
+    color: #222931;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+footer li:nth-child(1) a {
+    color: #ffe718;
+}
+
+footer p {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+}
+
+footer li:hover a {
+    color: black;
+    border-bottom: 3px solid #ffe718;
 }
