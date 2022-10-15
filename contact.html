@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href=""> -->
+  <link rel="stylesheet" href="styles-contact.css">
+  <script src="script.js" defer></script>
+  <script src="https://kit.fontawesome.com/73deec3e2b.js" crossorigin="anonymous"></script>
+  <title>Chassain TP - Travaux Publics Sud Ardèche</title>
+</head>
+
+<body>
+    
+<header>
+    <div class="logoDiv">
+    <img class="logo" src="./images/logo-travaux-publics.jpg" alt="logo chassain cedric travaux publics">
+    </div>
+    <div class="headerDiv">
+    <div class="phone-number-header">
+    <i class="fa-solid fa-phone fa-2xl"></i>
+    <p>telephone
+       <b>06.15.30.52.48</b></p>
+    </div>
+    <div class="work-time-header">
+    <i class="fa-sharp fa-solid fa-clock fa-2xl"></i>
+    <p>Horaires d'ouverture <b>Lun-Ven: 09:00-19:00</b></p>
+    </div>
+    <button type="button">
+        <i class="fa-solid fa-envelope fa-bounce"></i>
+        Demander un Devis
+    </button>
+    </div>
+</header>
+
+
+<!-- Nav menu -->
+
+<nav>
+    <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="#">Terrassement</a></li>
+        <li><a href="#">Assainissement</a></li>
+        <li><a href="#">Réalisations</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+
+<!-- main content -->
+
+<main>
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45626.08131068349!2d4.170539482186556!3d44.37918607010004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b4f7172d621e75%3A0xe143fe6ad1a11c1a!2s07460%20Berrias-et-Casteljau!5e0!3m2!1sen!2sfr!4v1665785847053!5m2!1sen!2sfr" width="1170" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="wrap-content">
+        <div class="contact-info">
+            
+            <div class="separator"></div>
+            <h3>Contact info</h3>
+
+            <div class="location">
+            <i class="fa-solid fa-location-dot fa-2xl"></i>
+            <div>
+            <h4>Adresse</h4>
+            <p>07460, Berrias et Casteljau</p>
+            </div></div>
+
+            <div class="phone">
+            <i class="fa-solid fa-phone fa-2xl"></i>
+            <div>
+            <h4>Une question ? Appelez nous</h4>
+            <p>06.15.30.52.48</p>
+            </div></div>
+
+            <div class="working-time">
+            <i class="fa-sharp fa-solid fa-clock fa-2xl"></i>
+            <div>
+            <h4>Horaires d'ouverture</h4>
+            <p>Lun-Ven: 09:00-19:00</p>
+            </div></div>
+
+            <div class="email">
+            <i class="fa-solid fa-envelope fa-2xl"></i>
+            <div>
+            <h4>Envoyez nous un email</h4>
+            <p>E-mail: cedrichassain@hotmail.fr</p>
+            </div></div>
+        </div>
+
+        <!-- Form -->
+
+        <div class="form-contact">
+            <div class="separator"></div>
+            <h3>Formulaire de contact</h3>
+            <p>Vous souhaitez obtenir un devis gratuit ? remplissez ce forumaire:</p>
+            <form action="/action_page.php" method="get">
+                <div class="wrapForm">
+                
+                <div class="lname-wrap">
+                <label for="lname">Votre Nom *</label>
+                <input required type="text" pattern="[a-z]{2,20}" placeholder="Entrez votre nom ici">
+                </div>
+
+                <div class="fname-wrap">
+                <label for="fname">Votre Prénom *</label>
+                <input required type="text" pattern="[a-z]{2,20}" placeholder="Entrez votre prénom ici">
+                </div></div>
+
+                <div class="wrapForm2">
+
+                <div class="email-wrap">
+                <label for="email">Votre Email *</label>
+                <input required type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Entrez votre Email ici">  
+                </div>
+
+                <div class="phone-wrap">
+                <label for="phone">Votre Téléphone *</label>
+                <input required type="text" pattern="[0-9]{10}" placeholder="Entrez votre téléphone ici" ></textarea>
+                </div></div>
+
+                <label for="subject">Votre Message *</label>
+                <textarea required name="subject" placeholder="Entrez votre message ici" style="height:250px; width: 785px;"></textarea>
+
+                <input type="submit" value="Envoyer">    
+            </form>
+
+        </div>
+    </div>
+</main>
+
+
+
+
+
+
+
+<!-- Footer -->
+
+<footer>
+    <div class="wrap-footer">
+    <div>
+    <img src="./images/logo-travaux-publics-removebg-preview.png" alt="logo travaux publics">
+    </div>
+    <div>
+    <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Terrassement</a></li>
+        <li><a href="#">Assainissement</a></li>
+        <li><a href="#">Réalisations</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+    <p>chassain-tp.fr © <em>Tous droits réservés</em> - <a class="mentions" href="#">Mentions Légales</a></p>
+    </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after {    
+    margin: 0;    
+    padding: 0;    
+    box-sizing: border-box;    
+    list-style: none;    
+    text-decoration: none;
+    scroll-behavior: auto !important;
+    /* border: 1px solid black; */
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 120rem;
+    padding-bottom: 2rem;
+}
+
+.headerDiv {
+    display: flex;
+    gap: 4rem;
+}
+
+header .logo {
+    height: 7.5rem;
+    width: 7.5rem;
+}
+
+.phone-number-header, .work-time-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 20.5rem;
+}
+
+.phone-number-header p, .work-time-header p {
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 1.3rem;
+    margin-left: 1.5rem;
+}
+
+.phone-number-header {
+    border-right: 1px solid lightgrey;
+}
+
+header button {
+    background: #ffe718;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    width: 100%;
+    max-width: 20.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: all 200ms ease-in-out;
+}
+
+header button:hover {
+    background: #222931;
+    color: white;
+}
+
+header button i {
+    margin-right: 0.75rem;
+}
+
+/* Nav Menu */
+
+nav {
+    position: absolute;
+    top: 7.25rem;
+    width: 100%;
+    max-width: 120rem;
+    background: #222931;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav li {
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    transition: all 200ms ease-in-out;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+nav ul li:nth-child(5) {
+    background: #ffe718;
+}
+
+nav ul li:nth-child(5) a {
+    color: #222931;
+}
+
+nav ul li:hover {
+    background: #ffe718;
+    cursor: pointer;
+}
+
+nav ul li:hover a {
+    color: #222931;
+}
+
+/* main content */
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.map {
+    margin: 12rem 0 6rem 0;
+}
+
+.wrap-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 13rem;
+    width: 100%;
+    max-width: 117rem;
+}
+
+.separator {
+    width: 2rem;
+    border-top: 4px solid #ffe718;
+    margin-bottom: 2rem;
+}
+
+.location, .phone, .working-time, .email {
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.location i, .phone i, .working-time i, .email i {
+    margin-right: 1.5rem;
+}
+
+main h3 {
+    font-size: 2.25rem;
+    color: #222931;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+}
+
+main h4 {
+    font-size: 1.65rem;
+    color: #222931;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+main p {
+    font-size: 1.5rem;
+}
+
+.form-contact p {
+    margin-bottom: 2.5rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapForm, .wrapForm2 {
+    display: flex;
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.fname-wrap, .lname-wrap, .email-wrap, .phone-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+form label {
+    font-size: 1.65rem;
+    color: #222931;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+form input[type=text], input[type="email"] {
+    max-width: 37.5rem;
+    background: #f5f6f6;
+    border: 1px solid #e6e8e8;
+    padding: 1.75rem;
+}
+
+form textarea {
+    background: #f5f6f6;
+    border: 1px solid #e6e8e8;
+    padding: 1.75rem;
+}
+
+
+
+.form-contact input[type=submit] {
+    border: none;
+    background: #ffe718;
+    font-family: inherit;
+    font-size: 1.35rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+    max-width: 11rem;
+    margin: 2.5rem 0 9rem;
+}
+
+.form-contact input[type=submit]:hover {
+    background: #222931;
+    color: white;
+}
+
+
+
+
+
+/* Footer */
+
+footer {
+    background: #f8f9f9;
+    padding: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}
+
+.wrap-footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    max-width: 117.5rem;
+}
+
+footer img {
+    height: 7.5rem;
+    width: 7.5rem;
+}
+
+footer ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+footer a {
+    color: #222931;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: 500;
+    transition: all 0ms;
+}
+
+footer li:nth-child(5) a {
+    color: #ffe718;
+}
+
+footer p {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+}
+
+footer .mentions {
+    text-transform: inherit;
+}
+
+footer li:hover a {
+    color: black;
+    border-bottom: 3px solid #ffe718;
+}
