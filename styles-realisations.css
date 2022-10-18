@@ -144,9 +144,9 @@ nav ul li:hover a {
     justify-content: center;
     align-items: center;
     margin-top: 12rem;
+    text-align: center;
+    
 }
-
-
 
 .separator {
     width: 2rem;
@@ -154,6 +154,40 @@ nav ul li:hover a {
     margin-bottom: 2rem;
 }
 
+.main-content h2 {
+    font-size: 1.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.main-content h3 {
+    font-size: 3rem;
+    color: #222931;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.main-content p {
+    font-size: 1.55rem;
+    max-width: 98rem;
+    margin-bottom: 5rem;
+}
+
+.images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: 5rem;
+}
+
+.images img {
+    height: 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.images:hover img {
+    box-shadow: inset 1px 1px 10px 10px red;
+}
 
 
 

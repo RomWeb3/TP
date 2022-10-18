@@ -37,7 +37,6 @@ header {
     align-items: center;
     width: 100%;
     max-width: 120rem;
-    padding-bottom: 2rem;
 }
 
 .headerDiv {
@@ -93,8 +92,6 @@ header button i {
 /* Nav Menu */
 
 nav {
-    position: absolute;
-    top: 7.25rem;
     width: 100%;
     max-width: 120rem;
     background: #222931;
@@ -139,14 +136,24 @@ nav ul li:hover a {
 /* main content */
 
 main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    max-width: 117rem;
 }
 
 .map {
-    margin: 12rem 0 6rem 0;
+    margin: 10rem 0 6rem 0;
+    position: relative;
+    padding-bottom: 27.5%;
+    height: 0;
+    overflow: hidden;
+}
+
+.map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .wrap-content {
@@ -222,7 +229,6 @@ form label {
 }
 
 form input[type=text], input[type="email"] {
-    max-width: 37.5rem;
     background: #f5f6f6;
     border: 1px solid #e6e8e8;
     padding: 1.75rem;
@@ -255,7 +261,6 @@ form textarea {
     background: #222931;
     color: white;
 }
-
 
 
 
@@ -315,4 +320,26 @@ footer .mentions {
 footer li:hover a {
     color: black;
     border-bottom: 3px solid #ffe718;
+}
+
+
+/* Responsive */
+
+@media screen and (max-width: 1220px) {
+    
+    header,nav, main {
+        padding: 0 2rem;
+    }
+
+    .wrapForm, .wrapForm2 {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    form input[type=text], input[type="email"], textarea {
+        max-width: 50rem;
+    }
+
 }
