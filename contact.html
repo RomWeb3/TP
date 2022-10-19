@@ -36,8 +36,11 @@
 
 
 <!-- Nav menu -->
-
+<div class="nav">
 <nav>
+    <div class="wrap-burger">
+        <img src="./images/icons8-menu-50.png" alt="">
+    </div>
     <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="terrassement.html">Terrassement</a></li>
@@ -46,6 +49,7 @@
         <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
+</div>
 
 
 <!-- main content -->
@@ -97,33 +101,37 @@
             <div class="separator"></div>
             <h3>Formulaire de contact</h3>
             <p>Vous souhaitez obtenir un devis gratuit ? remplissez ce forumaire:</p>
+
             <form action="/action_page.php" method="get">
-                <div class="wrapForm">
                 
-                <div class="lname-wrap">
-                <label for="lname">Votre Nom *</label>
-                <input required type="text" pattern="[a-z]{2,20}" placeholder="Entrez votre nom ici">
+                <div class="row">
+                    <div class="column">
+                        <label for="lname">Votre Nom *</label>
+                        <input required type="text" pattern="[a-z]{2,20}" placeholder="Entrez votre nom ici">
+                    </div>
+                    <div class="column">
+                        <label for="fname">Votre Prénom *</label>
+                        <input required type="text" pattern="[a-z]{2,20}" placeholder="Entrez votre prénom ici">
+                    </div>
                 </div>
 
-                <div class="fname-wrap">
-                <label for="fname">Votre Prénom *</label>
-                <input required type="text" pattern="[a-z]{2,20}" placeholder="Entrez votre prénom ici">
-                </div></div>
-
-                <div class="wrapForm2">
-
-                <div class="email-wrap">
-                <label for="email">Votre Email *</label>
-                <input required type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Entrez votre Email ici">  
+                <div class="row">
+                    <div class="column">
+                        <label for="email">Votre Email *</label>
+                        <input required type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Entrez votre Email ici">  
+                    </div>
+                    <div class="column">
+                        <label for="phone">Votre Téléphone *</label>
+                        <input required type="text" pattern="[0-9]{10}" placeholder="Entrez votre téléphone ici" ></textarea>
+                    </div>
                 </div>
 
-                <div class="phone-wrap">
-                <label for="phone">Votre Téléphone *</label>
-                <input required type="text" pattern="[0-9]{10}" placeholder="Entrez votre téléphone ici" ></textarea>
-                </div></div>
-
-                <label for="subject">Votre Message *</label>
-                <textarea required name="subject" placeholder="Entrez votre message ici" style="height:250px; width: 785px;"></textarea>
+                <div class="row">
+                    <div class="column">
+                        <label for="subject">Votre Message *</label>
+                        <textarea required name="subject" placeholder="Entrez votre message ici" rows="14"></textarea>
+                    </div>
+                </div>
 
                 <input type="submit" value="Envoyer">    
             </form>
@@ -143,16 +151,16 @@
 <footer>
     <div class="wrap-footer">
     <div>
-    <img src="./images/logo-travaux-publics-removebg-preview.png" alt="logo travaux publics">
+        <img src="./images/logo-travaux-publics-removebg-preview.png" alt="logo travaux publics">
     </div>
     <div>
-    <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="terrassement.html">Terrassement</a></li>
-        <li><a href="assainissement.html">Assainissement</a></li>
-        <li><a href="realisations.html">Réalisations</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="terrassement.html">Terrassement</a></li>
+            <li><a href="assainissement.html">Assainissement</a></li>
+            <li><a href="realisations.html">Réalisations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     <p>chassain-tp.fr © <em>Tous droits réservés</em> - <a class="mentions" href="#" target="_blank">Mentions Légales</a></p>
     </div>
     </div>

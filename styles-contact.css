@@ -91,9 +91,12 @@ header button i {
 
 /* Nav Menu */
 
-nav {
+.nav {
     width: 100%;
     max-width: 120rem;
+}
+
+nav {
     background: #222931;
 }
 
@@ -131,6 +134,10 @@ nav ul li:hover {
 
 nav ul li:hover a {
     color: #222931;
+}
+
+.nav img {
+    display: none;
 }
 
 /* main content */
@@ -203,44 +210,36 @@ main p {
     margin-bottom: 2.5rem;
 }
 
-form{
-    display: flex;
-    flex-direction: column;
-}
-
-.wrapForm, .wrapForm2 {
-    display: flex;
-    gap: 2.5rem;
-    margin-bottom: 2rem;
-}
-
-.fname-wrap, .lname-wrap, .email-wrap, .phone-wrap {
-    display: flex;
-    flex-direction: column;
+.form-contact {
     width: 100%;
 }
 
+form{
+    width: 100%;
+}
+
+.row{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem 3rem;
+    margin-bottom: 2rem;
+}
 
 form label {
     font-size: 1.65rem;
     color: #222931;
     font-weight: 600;
-    margin-bottom: 0.5rem;
 }
 
-form input[type=text], input[type="email"] {
+input[type=text], input[type="email"], textarea {
     background: #f5f6f6;
     border: 1px solid #e6e8e8;
     padding: 1.75rem;
+    width: 100%;
+    resize: none;
+    margin-top: 0.5rem;
 }
-
-form textarea {
-    background: #f5f6f6;
-    border: 1px solid #e6e8e8;
-    padding: 1.75rem;
-}
-
-
 
 .form-contact input[type=submit] {
     border: none;
@@ -254,7 +253,7 @@ form textarea {
     transition: all 200ms ease-in-out;
     cursor: pointer;
     max-width: 11rem;
-    margin: 2.5rem 0 9rem;
+    margin: 1rem 0 9rem;
 }
 
 .form-contact input[type=submit]:hover {
@@ -292,6 +291,7 @@ footer img {
 
 footer ul {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 2rem;
 }
@@ -301,7 +301,6 @@ footer a {
     text-transform: uppercase;
     font-size: 1.25rem;
     font-weight: 500;
-    transition: all 0ms;
 }
 
 footer li:nth-child(5) a {
@@ -325,21 +324,78 @@ footer li:hover a {
 
 /* Responsive */
 
-@media screen and (max-width: 1220px) {
+@media screen and (max-width: 1200px) {
     
-    header,nav, main {
+    header, .nav, main {
         padding: 0 2rem;
     }
 
-    .wrapForm, .wrapForm2 {
-        display: flex;
+}
+
+@media screen and (max-width: 767px) {
+    
+    header {
         flex-direction: column;
-        gap: 2.5rem;
-        margin-bottom: 2rem;
+        margin-top: 1rem;
     }
 
-    form input[type=text], input[type="email"], textarea {
-        max-width: 50rem;
+    .phone-number-header, .work-time-header {
+        display: none;
+    }
+
+    header button {
+        margin: 0.75rem 0 3rem;
+        padding: 1.25rem 2rem;
+    }
+
+    .nav {
+        padding: 0;
+    }
+
+    nav {
+        padding: 1.5rem 2rem;
+    }
+
+    .nav ul li {
+        display: none;
+    }
+
+    .wrap-burger {
+        background: #ffe718;
+        width: 3.5rem;
+        height: 3.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav img {
+        width: 2rem;
+        height: 2rem;
+        display: block;
+    }
+
+    .map {
+        margin: 6rem 0 6rem;
+    }
+
+    .wrap-content {
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    footer {
+        text-align: center;
+        padding: 1rem 1.5rem 2rem;
+    }
+
+    .wrap-footer {
+        flex-direction: column;
+    }
+
+    footer ul {
+        justify-content: center;
+        margin-bottom: 2rem;
     }
 
 }
