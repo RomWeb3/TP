@@ -89,6 +89,61 @@ header button i {
     margin-right: 0.75rem;
 }
 
+/* Modal menu Mobile */
+
+.modal-menu {
+    height: 100%;
+    width: 100%;
+    background: #222931;
+    position: absolute;
+    color: white;
+    padding: 2rem;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+}
+
+.modal-menu.active {
+    transform: translateX(0);
+  }
+
+.modal-menu-content {
+    min-height: 100vh;
+}
+
+.modal-menu-body ul li a {
+    color: white;
+    font-size: 1.75rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.modal-menu-body {
+    margin: 4rem 0;
+}
+
+.modal-menu-body ul li {
+    margin: 2rem 0;
+    padding: 0.5rem 0;
+}
+
+.modal-menu-header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-menu-body ul li:nth-child(5) {
+    background: #ffe718;
+}
+
+.modal-menu-body ul li:nth-child(5) a {
+    color: #222931;;
+}
+
+.close-menu {
+    font-size: 2.5rem;
+}
+
 /* Nav Menu */
 
 .nav {

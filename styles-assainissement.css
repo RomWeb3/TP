@@ -212,6 +212,12 @@ main {
 .wrapImg {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 7.5rem;
+}
+
+.wrapImg img {
+    height: 60rem;
+    width: 44rem;
 }
 
 .cta {
@@ -253,6 +259,8 @@ button:hover {
 button i {
     margin-right: 0.5rem;
 }
+
+
 
 
 
