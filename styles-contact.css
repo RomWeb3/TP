@@ -95,21 +95,18 @@ header button i {
     height: 100%;
     width: 100%;
     background: #222931;
-    position: absolute;
+    position: fixed;
     color: white;
     padding: 2rem;
     z-index: 1000;
     transform: translateX(-100%);
     transition: all 0.3s ease;
+    overflow: hidden;
 }
 
 .modal-menu.active {
     transform: translateX(0);
   }
-
-.modal-menu-content {
-    min-height: 100vh;
-}
 
 .modal-menu-body ul li a {
     color: white;

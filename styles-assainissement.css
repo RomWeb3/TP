@@ -249,6 +249,8 @@ main {
     cursor: pointer;
     transition: all 200ms ease-in-out;
     letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
 }
 
 button:hover {

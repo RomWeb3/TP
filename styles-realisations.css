@@ -257,13 +257,14 @@ nav ul li:hover a {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     margin-bottom: 12.5rem;
-    transition: all 800ms ease-in-out;
+    transition: all 1500ms ease-in-out;
 }
 
 .imagesT img, .imagesA img, .imagesV img, .imagesG img {
     height: 45rem;
     width: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
 .imagesT:hover img {
@@ -339,4 +340,20 @@ footer .mentions {
 footer li:hover a {
     color: black;
     border-bottom: 3px solid #ffe718;
+}
+
+
+/* Responsive */
+
+@media screen and (max-width: 1439px) {
+
+    .imagesT img, .imagesA img, .imagesV img, .imagesG img {
+        height: 35rem;
+    }
+
+    .imagesA, .imagesV, .imagesG {
+        transform: scale(0);
+        margin-top: -83rem;
+    }
+
 }

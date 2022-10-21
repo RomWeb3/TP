@@ -36,7 +36,6 @@ header {
     align-items: center;
     width: 100%;
     max-width: 120rem;
-    padding-bottom: 2rem;
 }
 
 .headerDiv {
@@ -89,11 +88,70 @@ header button i {
     margin-right: 0.75rem;
 }
 
+/* Modal menu Mobile */
+
+.modal-menu {
+    height: 100%;
+    width: 100%;
+    background: #222931;
+    position: fixed;
+    color: white;
+    padding: 2rem;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.modal-menu.active {
+    transform: translateX(0);
+  }
+
+.modal-menu-content {
+    min-height: 100vh;
+}
+
+.modal-menu-body ul li a {
+    color: white;
+    font-size: 1.75rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.modal-menu-body {
+    margin: 4rem 0;
+}
+
+.modal-menu-body ul li {
+    margin: 2rem 0;
+    padding: 0.5rem 0;
+}
+
+.modal-menu-header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-menu-body ul li:nth-child(1) {
+    background: #ffe718;
+}
+
+.modal-menu-body ul li:nth-child(1) a {
+    color: #222931;;
+}
+
+.close-menu {
+    font-size: 2.5rem;
+}
+
 /* Nav Menu */
 
+.nav {
+    width: 100%;
+    max-width: 120rem;
+}
+
 nav {
-    position: absolute;
-    top: 7.25rem;
     width: 100%;
     max-width: 120rem;
     background: #222931;
@@ -135,6 +193,10 @@ nav ul li:hover a {
     color: #222931;
 }
 
+.nav img {
+    display: none;
+}
+
 /* Main content */
 
 
@@ -147,6 +209,7 @@ nav ul li:hover a {
     display: flex;
     justify-content: center;
     box-shadow: inset 1px 1px 10px 1000px rgba(0, 0, 0, 0.3);
+    /* margin-top: -2rem; */
 }
 
 .content {
@@ -209,6 +272,7 @@ nav ul li:hover a {
 .stats {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 5rem 3rem;
 }
 
@@ -260,8 +324,10 @@ nav ul li:hover a {
 
 .wrap-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 5rem;
     width: 100%;
     max-width: 115rem;
 }
@@ -357,13 +423,13 @@ nav ul li:hover a {
 .trust {
     display: flex;
     justify-content: center;
-    width: 100%;
 }
 
 .wrap-trust {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 2rem;
     max-width: 115rem;
 }
@@ -433,6 +499,7 @@ footer img {
 footer ul {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 2rem;
 }
 
@@ -460,4 +527,148 @@ footer .mentions {
 footer li:hover a {
     color: black;
     border-bottom: 3px solid #ffe718;
+}
+
+
+
+/* Responsive */
+
+@media screen and (max-width: 1225px) {
+    
+    header, .nav, .trust {
+        padding: 0 2rem;
+    }
+
+}
+
+@media screen and (max-width: 1179px) {
+
+    .bandereau {
+        padding: 3rem
+    }
+    
+    .wrap-bandereau {
+        flex-direction: column;
+    }
+
+    .bandereau h4, .bandereau p {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .terrassement, .assainissement, .vrd {
+        width: 100%;
+        max-width: 80rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container img {
+        width: 100%;
+        height: 90%;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    .chantiers, .clients-satisfaits, .engins, .experience {
+        flex-direction: column;
+        text-align: center;
+}
+
+    .engins svg, .experience svg, .chantiers svg {
+        margin-left: 0.75rem;
+    }
+
+    .clients-satisfaits svg {
+        margin-left: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 779px) {
+
+    .garantie, .devis, .experience-trust {
+        width: 100%;
+        height: 28rem;
+    }
+
+}
+
+
+@media screen and (max-width: 767px) {
+    
+    header {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    .phone-number-header, .work-time-header {
+        display: none;
+    }
+
+    header button {
+        margin: 0.75rem 0 3rem;
+        padding: 1.25rem 2rem;
+    }
+
+    .nav {
+        padding: 0;
+    }
+
+    nav {
+        padding: 1.5rem 2rem;
+    }
+
+    .nav ul li {
+        display: none;
+    }
+
+    .wrap-burger {
+        background: #ffe718;
+        width: 3.5rem;
+        height: 3.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav img {
+        width: 2rem;
+        height: 2rem;
+        display: block;
+    }
+
+    .main-image {
+        height: 50rem;
+    }
+
+    .stats {
+        padding: 5rem 3rem 2rem;
+    }
+
+    .wrap-stats {
+        flex-direction: column;
+    }
+
+    .chantiers, .clients-satisfaits, .engins, .experience {
+        margin-bottom: 3rem;
+}
+
+    footer {
+        text-align: center;
+        padding: 1rem 1.5rem 2rem;
+    }
+
+    .wrap-footer {
+        flex-direction: column;
+    }
+
+    footer ul {
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
 }
