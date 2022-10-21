@@ -192,7 +192,7 @@ nav ul li:hover a {
     display: none;
 }
 
-/* Main content */
+/* Main */
 
 main {
     display: flex;
@@ -203,23 +203,24 @@ main {
     max-width: 117rem;
 }
 
-.aside {
+/* Aside */
+
+.aside-menu {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 2rem;
     width: 100%;
-    max-width: 26.5rem;
-    padding-top: 12.25rem;
+    padding-top: 1.25rem;
 }
 
-.aside a {
+.aside-menu a {
     width: 100%;
     max-width: 26.5rem;
 }
 
-.aside .terrassement, .aside .assainissement, .aside .vrd {
+.aside-menu .terrassement, .aside-menu .assainissement, .aside-menu .vrd, .aside-menu .realisations {
     padding: 2.5rem;
     border: 1px solid lightgray;
     color: #222931;
@@ -232,7 +233,7 @@ main {
     align-items: center;
 }
 
-.aside .terrassement:hover, .aside .assainissement:hover, .aside .vrd:hover {
+.aside .terrassement:hover, .aside .assainissement:hover, .aside .vrd:hover,.aside .realisations:hover {
     color: #ffe718;
     background: #222931;
 }
@@ -242,23 +243,23 @@ main {
 }
 
 .cta {
-    margin-top: 1rem;
+    margin: 3rem 0;
 }
 
 .txt-area {
     background: #ffe718;
     color: #222931;
-    padding: 2rem 7rem 3rem 3rem;
+    padding: 3rem 7rem 3rem 3rem;
 }
 
 .txt-area h5 {
     font-size: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 .txt-area p {
     font-size: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     line-height: 2.25rem;
 }
 
@@ -279,6 +280,35 @@ button:hover {
     background: #222931;
     color: white;
 }
+
+.working-time h4 {
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+}
+
+.separator {
+    width: 2rem;
+    border-top: 4px solid #ffe718;
+    margin-bottom: 2rem;
+}
+
+.working-time p {
+    font-size: 1.5rem;
+}
+
+.wrap {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+}
+
+.wrap i {
+    padding-top: 0.3rem;
+}
+
+
+/* Main content */
 
 .container h1 {
     font-size: 3.5rem;
@@ -304,24 +334,27 @@ button:hover {
     margin: 0 0 2rem;
 }
 
+.container a {
+    color: #222931;
+}
+
+.bottom {
+    margin-bottom: 8rem;
+}
+
 .wrapImg {
     display: flex;
+    flex-direction: column;
+    gap: 2rem;
     justify-content: space-between;
-    margin-bottom: 9rem;
+    margin-bottom: 3rem;
 }
 
 .wrapImg img {
-    height: 31rem;
-    width: 42rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -353,6 +386,7 @@ footer img {
 footer ul {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 2rem;
 }
 
@@ -380,4 +414,123 @@ footer .mentions {
 footer li:hover a {
     color: black;
     border-bottom: 3px solid #ffe718;
+}
+
+@media screen and (max-width: 1225px) {
+
+    header, .nav, main {
+        padding: 0 2rem;
+    }
+
+}
+
+
+@media screen and (max-width: 1024px) {
+
+    main {
+        flex-direction: column-reverse;
+    }
+
+    .bottom {
+        margin-bottom: 2rem;
+    }
+
+    .aside-menu {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .aside-menu a {
+        width: 100%;
+        min-width: 20rem;
+    }
+
+    .cta {
+        width: 100%;
+    }
+
+    .cta img {
+        width: 100%;
+        background: #ffe718;
+        padding: 2rem;
+    }
+
+    .working-time {
+        margin-bottom: 5rem;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    
+    header {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    .phone-number-header, .work-time-header {
+        display: none;
+    }
+
+    header button {
+        margin: 0.75rem 0 3rem;
+        padding: 1.25rem 2rem;
+    }
+
+    .nav {
+        padding: 0;
+    }
+
+    nav {
+        padding: 1.5rem 2rem;
+    }
+
+    .nav ul li {
+        display: none;
+    }
+
+    .wrap-burger {
+        background: #ffe718;
+        width: 3.5rem;
+        height: 3.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav img {
+        width: 2rem;
+        height: 2rem;
+        display: block;
+    }
+
+    footer {
+        text-align: center;
+        padding: 1rem 1.5rem 2rem;
+    }
+
+    .wrap-footer {
+        flex-direction: column;
+    }
+
+    footer ul {
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+}
+
+@media screen and (max-width: 589px) {
+
+    .aside-menu a {
+        max-width: 54.3rem;
+    }
+
+    .aside-menu .terrassement, .aside-menu .assainissement, .aside-menu .vrd, .aside-menu .realisations {
+        max-width: 54.3rem;
+        justify-content: center;
+    }
+
 }

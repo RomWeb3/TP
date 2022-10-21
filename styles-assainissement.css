@@ -37,7 +37,6 @@ header {
     align-items: center;
     width: 100%;
     max-width: 120rem;
-    padding-bottom: 2rem;
 }
 
 .headerDiv {
@@ -90,13 +89,66 @@ header button i {
     margin-right: 0.75rem;
 }
 
+/* Modal menu Mobile */
+
+.modal-menu {
+    height: 100%;
+    width: 100%;
+    background: #222931;
+    position: fixed;
+    color: white;
+    padding: 2rem;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.modal-menu.active {
+    transform: translateX(0);
+  }
+
+.modal-menu-body ul li a {
+    color: white;
+    font-size: 1.75rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.modal-menu-body {
+    margin: 4rem 0;
+}
+
+.modal-menu-body ul li {
+    margin: 2rem 0;
+    padding: 0.5rem 0;
+}
+
+.modal-menu-header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-menu-body ul li:nth-child(3) {
+    background: #ffe718;
+}
+
+.modal-menu-body ul li:nth-child(3) a {
+    color: #222931;;
+}
+
+.close-menu {
+    font-size: 2.5rem;
+}
+
 /* Nav Menu */
 
-nav {
-    position: absolute;
-    top: 7.25rem;
+.nav {
     width: 100%;
     max-width: 120rem;
+}
+
+nav {
     background: #222931;
 }
 
@@ -136,34 +188,39 @@ nav ul li:hover a {
     color: #222931;
 }
 
+.nav img {
+    display: none;
+}
+
 /* Main content */
 
 main {
     display: flex;
     justify-content: flex-start;
     gap: 3rem;
-    margin-top: 12rem;
+    margin-top: 10rem;
     width: 100%;
     max-width: 117rem;
 }
 
-.aside {
+/* Aside */
+
+.aside-menu {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 2rem;
     width: 100%;
-    max-width: 26.5rem;
-    padding-top: 12.25rem;
+    padding-top: 1.25rem;
 }
 
-.aside a {
+.aside-menu a {
     width: 100%;
     max-width: 26.5rem;
 }
 
-.aside .terrassement, .aside .assainissement, .aside .vrd {
+.aside-menu .terrassement, .aside-menu .assainissement, .aside-menu .vrd, .aside-menu .realisations {
     padding: 2.5rem;
     border: 1px solid lightgray;
     color: #222931;
@@ -176,7 +233,7 @@ main {
     align-items: center;
 }
 
-.aside .terrassement:hover, .aside .assainissement:hover, .aside .vrd:hover {
+.aside .terrassement:hover, .aside .assainissement:hover, .aside .vrd:hover,.aside .realisations:hover {
     color: #ffe718;
     background: #222931;
 }
@@ -184,6 +241,74 @@ main {
 .aside i {
     margin-right: 1.25rem;
 }
+
+.cta {
+    margin: 3rem 0;
+}
+
+.txt-area {
+    background: #ffe718;
+    color: #222931;
+    padding: 3rem 7rem 3rem 3rem;
+}
+
+.txt-area h5 {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.txt-area p {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    line-height: 2.25rem;
+}
+
+.txt-area button {
+    border: none;
+    background: white;
+    font-family: inherit;
+    text-transform: uppercase;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+}
+
+button:hover {
+    background: #222931;
+    color: white;
+}
+
+.working-time h4 {
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+}
+
+.separator {
+    width: 2rem;
+    border-top: 4px solid #ffe718;
+    margin-bottom: 2rem;
+}
+
+.working-time p {
+    font-size: 1.5rem;
+}
+
+.wrap {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+}
+
+.wrap i {
+    padding-top: 0.3rem;
+}
+
+
+/* Main content */
 
 .container h1 {
     font-size: 3.5rem;
@@ -209,69 +334,27 @@ main {
     margin: 0 0 2rem;
 }
 
+.container a {
+    color: #222931;
+}
+
+.bottom {
+    margin-bottom: 8rem;
+}
+
 .wrapImg {
     display: flex;
+    flex-direction: column;
+    gap: 2rem;
     justify-content: space-between;
-    margin-bottom: 7.5rem;
+    margin-bottom: 3rem;
 }
 
 .wrapImg img {
-    height: 60rem;
-    width: 44rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-
-.cta {
-    margin-top: 1rem;
-}
-
-.txt-area {
-    background: #ffe718;
-    color: #222931;
-    padding: 2rem 7rem 3rem 3rem;
-}
-
-.txt-area h5 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-.txt-area p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.txt-area button {
-    border: none;
-    background: white;
-    font-family: inherit;
-    text-transform: uppercase;
-    padding: 1rem 3rem;
-    cursor: pointer;
-    transition: all 200ms ease-in-out;
-    letter-spacing: 0.5px;
-    display: flex;
-    align-items: center;
-}
-
-button:hover {
-    background: #222931;
-    color: white;
-}
-
-button i {
-    margin-right: 0.5rem;
-}
-
-
-
-
-
-
-
-
-
-
-
 
 
 
