@@ -205,6 +205,12 @@ main {
 
 /* Aside */
 
+.aside {
+    position: sticky;
+    top: 0;
+    height: 114.1rem;
+}
+
 .aside-menu {
     display: flex;
     flex-direction: column;
@@ -416,6 +422,8 @@ footer li:hover a {
     border-bottom: 3px solid #ffe718;
 }
 
+/* Responsive */
+
 @media screen and (max-width: 1225px) {
 
     header, .nav, main {
@@ -433,6 +441,11 @@ footer li:hover a {
 
     .bottom {
         margin-bottom: 2rem;
+    }
+
+    .aside {
+        position: static;
+        height: auto;
     }
 
     .aside-menu {
@@ -504,6 +517,10 @@ footer li:hover a {
         width: 2rem;
         height: 2rem;
         display: block;
+    }
+
+    main {
+        margin-top: 6rem;
     }
 
     footer {

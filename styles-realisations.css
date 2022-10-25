@@ -252,34 +252,48 @@ nav ul li:hover a {
     background: #ffe718;
 }
 
+
 .imagesT, .imagesA, .imagesV, .imagesG {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    margin-bottom: 12.5rem;
+    display: flex;
+    flex-flow: row wrap;
     transition: all 1500ms ease-in-out;
+    margin-bottom: 12rem;
 }
 
-.imagesT img, .imagesA img, .imagesV img, .imagesG img {
-    height: 45rem;
+.wrap, .wrap2, .wrap4 {
+    width: 33.3333%;
+    cursor: pointer;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    height: 100%;
     width: 100%;
-    object-fit: cover;
-    object-position: center;
+    opacity: 0;
+    transition: 300ms ease-in-out;
+    background-color: #222931ca;
 }
 
-.imagesT:hover img {
-    box-shadow: inset 1px 1px 10px 10px red;
+.wrap:hover .overlay {
+    opacity: 1;
+}
+
+.overlay svg {
+    fill: #ffe718;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    inset: 0;
+    margin: auto;
 }
 
 .imagesA, .imagesV, .imagesG {
-    transform: scale(0);
-    margin-top: -102.5rem;
+    /* transform: scale(1); */
+    display: none;
 }
-
-
-
-
-
 
 
 
@@ -345,15 +359,19 @@ footer li:hover a {
 
 /* Responsive */
 
-@media screen and (max-width: 1439px) {
+@media screen and (max-width: 2249px) {
 
-    .imagesT img, .imagesA img, .imagesV img, .imagesG img {
-        height: 35rem;
+    .wrap {
+        width: 50%;
     }
+ 
+ }
 
-    .imagesA, .imagesV, .imagesG {
-        transform: scale(0);
-        margin-top: -83rem;
-    }
+
+@media screen and (max-width: 1024px) {
+
+   .wrap, .wrap2 {
+    width: 100%;
+   }
 
 }

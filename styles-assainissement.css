@@ -205,6 +205,12 @@ main {
 
 /* Aside */
 
+.aside {
+    position: sticky;
+    top: 0;
+    height: 114.1rem;
+}
+
 .aside-menu {
     display: flex;
     flex-direction: column;
@@ -280,6 +286,10 @@ button:hover {
     background: #222931;
     color: white;
 }
+
+/* .working-time {
+    margin-bottom: 9rem;
+} */
 
 .working-time h4 {
     font-size: 2.25rem;
@@ -386,6 +396,7 @@ footer img {
 footer ul {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 2rem;
 }
 
@@ -413,4 +424,135 @@ footer .mentions {
 footer li:hover a {
     color: black;
     border-bottom: 3px solid #ffe718;
+}
+
+
+/* Responsive */
+
+@media screen and (max-width: 1225px) {
+
+    header, .nav, main {
+        padding: 0 2rem;
+    }
+
+}
+
+
+@media screen and (max-width: 1024px) {
+
+    main {
+        flex-direction: column-reverse;
+    }
+
+    .bottom {
+        margin-bottom: 2rem;
+    }
+
+    .aside {
+        position: static;
+        height: auto;
+    }
+
+    .aside-menu {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .aside-menu a {
+        width: 100%;
+        min-width: 20rem;
+    }
+
+    .cta {
+        width: 100%;
+    }
+
+    .cta img {
+        width: 100%;
+        background: #ffe718;
+        padding: 2rem;
+    }
+
+    .working-time {
+        margin-bottom: 5rem;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    
+    header {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    .phone-number-header, .work-time-header {
+        display: none;
+    }
+
+    header button {
+        margin: 0.75rem 0 3rem;
+        padding: 1.25rem 2rem;
+    }
+
+    .nav {
+        padding: 0;
+    }
+
+    nav {
+        padding: 1.5rem 2rem;
+    }
+
+    .nav ul li {
+        display: none;
+    }
+
+    .wrap-burger {
+        background: #ffe718;
+        width: 3.5rem;
+        height: 3.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav img {
+        width: 2rem;
+        height: 2rem;
+        display: block;
+    }
+
+    main {
+        margin-top: 6rem;
+    }
+
+    footer {
+        text-align: center;
+        padding: 1rem 1.5rem 2rem;
+    }
+
+    .wrap-footer {
+        flex-direction: column;
+    }
+
+    footer ul {
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+}
+
+@media screen and (max-width: 589px) {
+
+    .aside-menu a {
+        max-width: 54.3rem;
+    }
+
+    .aside-menu .terrassement, .aside-menu .assainissement, .aside-menu .vrd, .aside-menu .realisations {
+        max-width: 54.3rem;
+        justify-content: center;
+    }
+
 }
