@@ -313,6 +313,46 @@ input[type=text], input[type="email"], textarea {
     color: white;
 }
 
+.submit {
+    position: relative;
+}
+
+.status {
+    width: 90%;
+    max-width: 30rem;
+    text-align: center;
+    padding: 0.85rem;
+    margin: 0 auto;
+    position: absolute;
+    top: 1rem;
+    left: 15rem;
+  }
+
+  .status.success {
+    background-color: rgb(0, 255, 0);
+    animation: status 5s ease forwards;
+  }
+
+  .status.error {
+    background-color: red;
+    color: white;
+    animation: status 5s ease forwards;
+  }
+
+  @keyframes status {
+    0% {
+      opacity: 1;
+      pointer-events: all;
+    }
+    50% {
+      opacity: 0.9;
+      pointer-events: all;
+    }
+    100% {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
 
 
 
@@ -449,5 +489,17 @@ footer li:hover a {
         justify-content: center;
         margin-bottom: 2rem;
     }
+
+}
+
+
+@media screen and (max-width: 800px) {
+
+    .status {
+        top: 6rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
 
 }

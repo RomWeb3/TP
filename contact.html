@@ -121,39 +121,42 @@
             <h3>Formulaire de contact</h3>
             <p>Vous souhaitez obtenir un devis gratuit ? remplissez ce forumaire:</p>
 
-            <form action="/action_page.php" method="get">
+            <form action="https://formspree.io/f/xlevporn" method="POST" id="my-form">
                 
                 <div class="row">
                     <div class="column">
                         <label for="lname">Votre Nom *</label>
-                        <input required type="text" pattern="[a-z]{2,20}" placeholder="Entrez votre nom ici">
+                        <input name="Nom" type="text" pattern="[a-zA-Z ]{2,20}" placeholder="Entrez votre nom ici" required>
                     </div>
                     <div class="column">
                         <label for="fname">Votre Prénom *</label>
-                        <input required type="text" pattern="[a-z]{2,20}" placeholder="Entrez votre prénom ici">
+                        <input name="Prenom" type="text" pattern="[a-zA-Z ]{2,20}" placeholder="Entrez votre prénom ici" required>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="column">
                         <label for="email">Votre Email *</label>
-                        <input required type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Entrez votre Email ici">  
+                        <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Entrez votre Email ici" required >  
                     </div>
                     <div class="column">
                         <label for="phone">Votre Téléphone *</label>
-                        <input required type="text" pattern="[0-9]{10}" placeholder="Entrez votre téléphone ici" ></textarea>
+                        <input name="Telephone" type="text" pattern="[0-9]{10}" placeholder="Entrez votre téléphone ici" required></input>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="column">
-                        <label for="subject">Votre Message *</label>
-                        <textarea required name="subject"  placeholder="Entrez votre message ici" rows="14"></textarea>
+                        <label for="message">Votre Message *</label>
+                        <textarea required name="message"  placeholder="Entrez votre message ici" rows="14"></textarea>
                     </div>
                 </div>
-
-                <input type="submit" value="Envoyer">    
+                <div class="submit">
+                    <input type="submit" value="Envoyer">
+                    <p id="my-form-status" class="status"></p> 
+                </div>
             </form>
+
 
         </div>
     </div>
@@ -185,5 +188,39 @@
     </div>
 </footer>
 
+<script>
+    const form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      const status = document.getElementById("my-form-status");
+      const data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.classList.add('success');  
+          status.innerHTML = "Votre message a bien été envoyé!";
+          form.reset()
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            } else {
+              status.classList.add('error');
+              status.innerHTML = "Oops! Il y a une erreur."
+            }
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! Il y a une erreur."
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
 </body>
 </html>
