@@ -76,6 +76,8 @@ btnGoudronnage.addEventListener('click', () => {
 const carousel = document.querySelector('.carousel');
 const openModal = document.querySelectorAll('.wrap');
 const modalImg = document.querySelectorAll('.modalImg');
+const slides = document.getElementById('slides');
+
 
 openModal.forEach(button => {
 button.addEventListener('click', () => {
@@ -143,8 +145,6 @@ buttons.forEach(button => {
     button.addEventListener("click", () => {
         
             const offset = button.dataset.carouselButton === 'next' ? 1 : -1
-            const slides = button
-                .closest('[data-carousel]').querySelector('[data-slides]')
       
             const activeSlide = slides.querySelector('[data-active]')
             let newIndex = [...slides.children].indexOf(activeSlide) + offset
@@ -167,7 +167,9 @@ carousel.addEventListener('click', (e) => {
     if (!e.target.closest('.modalImg') && !e.target.closest('[data-carousel-button]')) {
         carousel.classList.remove('active');
     }
-})
+});
+
+
 
 
 
