@@ -138,7 +138,7 @@ header button i {
 }
 
 .modal-menu-body ul li:nth-child(1) a {
-    color: #222931;;
+    color: #222931;
 }
 
 .close-menu {
@@ -449,6 +449,7 @@ nav ul li:hover a {
 .trust svg {
     height: 5rem;
     width: 5rem;
+    fill: #aeb6be;
 }
 
 .trust h4 {
@@ -464,10 +465,6 @@ nav ul li:hover a {
 
 .trust p:hover {
     scale: 1.1;
-}
-
-.trust svg {
-    fill: #aeb6be;
 }
 
 .trust svg:hover {
