@@ -69,6 +69,7 @@ header .logo {
 
 header button {
     background: #ffe718;
+    color: #222931;
     border: none;
     padding: 1rem;
     cursor: pointer;
@@ -272,6 +273,7 @@ main {
 .txt-area button {
     border: none;
     background: white;
+    color: #222931;
     font-family: inherit;
     text-transform: uppercase;
     padding: 1rem 3rem;
@@ -286,10 +288,6 @@ button:hover {
     background: #222931;
     color: white;
 }
-
-/* .working-time {
-    margin-bottom: 9rem;
-} */
 
 .working-time h4 {
     font-size: 2.25rem;

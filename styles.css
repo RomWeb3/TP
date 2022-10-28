@@ -68,6 +68,7 @@ header .logo {
 
 header button {
     background: #ffe718;
+    color: #222931;
     border: none;
     padding: 1rem;
     cursor: pointer;
@@ -250,6 +251,7 @@ nav ul li:hover a {
 
 .content button {
     background: #ffe718;
+    color: #222931;
     border: none;
     padding: 1rem 2.5rem;
     text-transform: uppercase;
@@ -262,6 +264,7 @@ nav ul li:hover a {
 
 .content button:nth-child(2) {
     background: white;
+    color: #222931;
 }
 
 .content button:hover {
@@ -354,6 +357,7 @@ nav ul li:hover a {
 
 .container button {
     background: #ffe718;
+    color: #222931;
     border: none;
     padding: 1rem 2.5rem;
     text-transform: uppercase;
@@ -398,6 +402,7 @@ nav ul li:hover a {
 
 .bandereau button {
     background: #fff;
+    color: #222931;
     border: none;
     padding: 1rem;
     cursor: pointer;
