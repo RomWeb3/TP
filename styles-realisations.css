@@ -320,7 +320,7 @@ nav ul li:hover a {
 
 /* Modal Carousel */
 
-.carousel {
+.carousel, .carousel2, .carousel3, .carousel4 {
    position: fixed;
    z-index: 100000;
    inset: 0;
@@ -329,7 +329,7 @@ nav ul li:hover a {
    height: 100vh;
 }
 
-.carousel.active {
+.carousel.active, .carousel2.active, .carousel3.active , .carousel4.active  {
     scale: 1;
 }
 
@@ -371,7 +371,18 @@ nav ul li:hover a {
     align-items: center;
 }
 
+
 .carousel img.icon-previous {
+    position: absolute;
+    height: 1.5rem;
+    width: 1rem;
+    left: 2.75rem;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.icon-previous2 {
     position: absolute;
     height: 1.5rem;
     width: 1rem;
@@ -406,6 +417,14 @@ nav ul li:hover a {
 }
 
 .carousel img.icon-next {
+    position: absolute;
+    height: 1.5rem;
+    width: 1rem;
+    inset: 0;
+    margin: auto;
+}
+
+.icon-next2 {
     position: absolute;
     height: 1.5rem;
     width: 1rem;

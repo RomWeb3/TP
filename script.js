@@ -74,21 +74,16 @@ btnGoudronnage.addEventListener('click', () => {
 // Modal Carousel
 
 const carousel = document.querySelector('.carousel');
+const carousel2 = document.querySelector('.carousel2');
+const carousel3 = document.querySelector('.carousel3');
+const carousel4 = document.querySelector('.carousel4');
 const openModal = document.querySelectorAll('.wrap');
 const modalImg = document.querySelectorAll('.modalImg');
-const slides = document.getElementById('slides');
 
 
 openModal.forEach(button => {
 button.addEventListener('click', () => {
     carousel.classList.add('active');
-    for (let i = 0; i < modalImg.length; i++) {
-        let img = modalImg[i];
-        img.src = img.src
-        .replace('Assainissement', 'Terrassement')
-        .replace('vrd', 'Terrassement')
-        .replace('Goudronnage', 'Terrassement');
-    }
 })
 });
 
@@ -97,14 +92,7 @@ const openModal2 = document.querySelectorAll('.wrap2');
 
 openModal2.forEach(button => {
 button.addEventListener('click', () => {
-    carousel.classList.add('active');
-    for (let i = 0; i < modalImg.length; i++) {
-        let img = modalImg[i];
-        img.src = img.src
-        .replace('Terrassement', 'Assainissement')
-        .replace('vrd', 'Assainissement')
-        .replace('Goudronnage', 'Assainissement');
-    }
+    carousel2.classList.add('active');
 })
 });
 
@@ -112,14 +100,7 @@ const openModal3 = document.querySelectorAll('.wrap3');
 
 openModal3.forEach(button => {
 button.addEventListener('click', () => {
-    carousel.classList.add('active');
-    for (let i = 0; i < modalImg.length; i++) {
-        let img = modalImg[i];
-        img.src = img.src
-        .replace('Terrassement', 'vrd')
-        .replace('Assainissement', 'vrd')
-        .replace('Goudronnage', 'vrd');
-    }
+    carousel3.classList.add('active'); 
 })
 });
 
@@ -127,14 +108,7 @@ const openModal4 = document.querySelectorAll('.wrap4');
 
 openModal4.forEach(button => {
 button.addEventListener('click', () => {
-    carousel.classList.add('active');
-    for (let i = 0; i < modalImg.length; i++) {
-        let img = modalImg[i];
-        img.src = img.src
-        .replace('Terrassement', 'Goudronnage')
-        .replace('Assainissement', 'Goudronnage')
-        .replace('vrd', 'Goudronnage');
-    }
+    carousel4.classList.add('active');
 })
 });
 
@@ -145,6 +119,7 @@ buttons.forEach(button => {
     button.addEventListener("click", () => {
         
             const offset = button.dataset.carouselButton === 'next' ? 1 : -1
+            const slides = button.closest("[data-carousel]").querySelector("[data-slides]")
       
             const activeSlide = slides.querySelector('[data-active]')
             let newIndex = [...slides.children].indexOf(activeSlide) + offset
@@ -155,7 +130,6 @@ buttons.forEach(button => {
                 newIndex = 0
             }
 
-            slides.dataset.active = true
             slides.children[newIndex].dataset.active = true
             delete activeSlide.dataset.active
     })
@@ -166,6 +140,24 @@ const imagesModal = document.querySelectorAll('.modalImg');
 carousel.addEventListener('click', (e) => {
     if (!e.target.closest('.modalImg') && !e.target.closest('[data-carousel-button]')) {
         carousel.classList.remove('active');
+    }
+});
+
+carousel2.addEventListener('click', (e) => {
+    if (!e.target.closest('.modalImg') && !e.target.closest('[data-carousel-button]')) {
+        carousel2.classList.remove('active');
+    }
+});
+
+carousel3.addEventListener('click', (e) => {
+    if (!e.target.closest('.modalImg') && !e.target.closest('[data-carousel-button]')) {
+        carousel3.classList.remove('active');
+    }
+});
+
+carousel4.addEventListener('click', (e) => {
+    if (!e.target.closest('.modalImg') && !e.target.closest('[data-carousel-button]')) {
+        carousel4.classList.remove('active');
     }
 });
 
