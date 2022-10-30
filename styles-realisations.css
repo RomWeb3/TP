@@ -563,7 +563,7 @@ footer li:hover a {
     width: 100%;
    }
 
-   .carousel {
+   .carousel, .carousel2, .carousel3, .carousel4 {
     display: none;
    }
 
