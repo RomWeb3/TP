@@ -355,6 +355,11 @@ nav ul li:hover a {
     margin-bottom: 2rem;
 }
 
+.container p a {
+    color: black;
+    cursor: default;
+}
+
 .container button {
     background: #ffe718;
     color: #222931;
