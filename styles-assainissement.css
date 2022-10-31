@@ -450,6 +450,7 @@ footer li:hover a {
     .aside {
         position: static;
         height: auto;
+        max-width: 102.4rem;
     }
 
     .aside-menu {
