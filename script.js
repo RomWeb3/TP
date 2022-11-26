@@ -1,15 +1,18 @@
 // Burger menu mobile
 
+const body = document.querySelector('body');
 const burger = document.querySelector('.wrap-burger');
 const closeMenu = document.querySelector('.close-menu');
 const menuMobile = document.querySelector('.modal-menu');
 
 burger.addEventListener('click', () => {
   menuMobile.classList.add('active');
+  body.style.overflow = 'hidden';
 });
 
 closeMenu.addEventListener('click', () => {
   menuMobile.classList.remove('active');
+  body.style.overflow = 'auto';
 });
 
 
