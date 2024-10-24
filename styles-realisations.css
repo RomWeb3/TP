@@ -337,6 +337,14 @@ nav ul li:hover a {
     box-shadow: 1px 1px 1px 99999px rgba(0, 0, 0, 0.7);
 }
 
+.modalImg {
+    display: none;
+}
+
+.modalImg[data-active] {
+    display: block;
+}
+
 .wrapImg img {
     width: calc(100% - 19vw);
     max-width: 165rem;
