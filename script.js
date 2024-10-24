@@ -15,7 +15,6 @@ closeMenu.addEventListener('click', () => {
   body.style.overflow = 'auto';
 });
 
-
 // Realisations switch theme
 
 const btnTerrassement = document.getElementById('btnTerrassement');
@@ -26,8 +25,6 @@ const terrassementImg = document.getElementById('terrassement');
 const assainissementImg = document.getElementById('assainissement');
 const vrdImg = document.getElementById('vrd');
 const goudronnageImg = document.getElementById('goudronnage');
-
-
 
 btnTerrassement.addEventListener('click', () => {
     terrassementImg.style.transform = 'translateX(0)';
@@ -73,7 +70,6 @@ btnGoudronnage.addEventListener('click', () => {
     btnGoudronnage.style.background = '#ffe718';
 });
 
-
 // Modal Carousel
 
 const carousel = document.querySelector('.carousel');
@@ -83,59 +79,72 @@ const carousel4 = document.querySelector('.carousel4');
 const openModal = document.querySelectorAll('.wrap');
 const modalImg = document.querySelectorAll('.modalImg');
 
-
 openModal.forEach(button => {
-button.addEventListener('click', () => {
-    carousel.classList.add('active');
-})
+    button.addEventListener('click', () => {
+        carousel.classList.add('active');
+    });
 });
 
+// Ajout du gestionnaire d'événements pour ouvrir la bonne image dans la modal
+document.querySelectorAll('.imagesT img').forEach((img) => {
+    img.addEventListener('click', () => {
+        const index = img.getAttribute('data-image'); // Récupère l'index de l'image
+        const modalImages = document.querySelectorAll('.modalImg'); // Sélectionne toutes les images de la modal
 
+        // Masque toutes les images de la modal
+        modalImages.forEach((modalImg) => {
+            modalImg.style.display = 'none';
+        });
+
+        // Affiche l'image correspondante
+        modalImages[index].style.display = 'block'; // Affiche l'image correspondante
+        carousel.classList.add('active'); // Ouvre la modal
+    });
+});
+
+// Gestion des autres modals
 const openModal2 = document.querySelectorAll('.wrap2');
 
 openModal2.forEach(button => {
-button.addEventListener('click', () => {
-    carousel2.classList.add('active');
-})
+    button.addEventListener('click', () => {
+        carousel2.classList.add('active');
+    });
 });
 
 const openModal3 = document.querySelectorAll('.wrap3');
 
 openModal3.forEach(button => {
-button.addEventListener('click', () => {
-    carousel3.classList.add('active'); 
-})
+    button.addEventListener('click', () => {
+        carousel3.classList.add('active'); 
+    });
 });
 
 const openModal4 = document.querySelectorAll('.wrap4');
 
 openModal4.forEach(button => {
-button.addEventListener('click', () => {
-    carousel4.classList.add('active');
-})
+    button.addEventListener('click', () => {
+        carousel4.classList.add('active');
+    });
 });
 
 const buttons = document.querySelectorAll('[data-carousel-button]');
 
-
 buttons.forEach(button => {
     button.addEventListener("click", () => {
-        
-            const offset = button.dataset.carouselButton === 'next' ? 1 : -1
-            const slides = button.closest("[data-carousel]").querySelector("[data-slides]")
-      
-            const activeSlide = slides.querySelector('[data-active]')
-            let newIndex = [...slides.children].indexOf(activeSlide) + offset
-            if (newIndex < 0) {
-                newIndex = slides.children.length - 1
-            } 
-            if (newIndex >= slides.children.length) {
-                newIndex = 0
-            }
+        const offset = button.dataset.carouselButton === 'next' ? 1 : -1;
+        const slides = button.closest("[data-carousel]").querySelector("[data-slides]");
+        const activeSlide = slides.querySelector('[data-active]');
+        let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+        if (newIndex < 0) {
+            newIndex = slides.children.length - 1;
+        } 
+        if (newIndex >= slides.children.length) {
+            newIndex = 0;
+        }
 
-            slides.children[newIndex].dataset.active = true
-            delete activeSlide.dataset.active
-    })
+        slides.children[newIndex].dataset.active = true;
+        delete activeSlide.dataset.active;
+    });
 });
 
 const imagesModal = document.querySelectorAll('.modalImg');
@@ -163,10 +172,3 @@ carousel4.addEventListener('click', (e) => {
         carousel4.classList.remove('active');
     }
 });
-
-
-
-
-
-
-
