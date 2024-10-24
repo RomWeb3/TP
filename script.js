@@ -79,11 +79,11 @@ const carousel4 = document.querySelector('.carousel4');
 const openModal = document.querySelectorAll('.wrap');
 const modalImg = document.querySelectorAll('.modalImg');
 
-openModal.forEach(button => {
-    button.addEventListener('click', () => {
-        carousel.classList.add('active');
-    });
-});
+// openModal.forEach(button => {
+//     button.addEventListener('click', () => {
+//         carousel.classList.add('active');
+//     });
+// });
 
 // Ajout du gestionnaire d'événements pour ouvrir la bonne image dans la modal
 document.querySelectorAll('.imagesT img').forEach((img) => {
@@ -94,7 +94,7 @@ document.querySelectorAll('.imagesT img').forEach((img) => {
         console.log('Index clicked:', index);
         console.log('Number of modal images:', modalImages.length);
         console.log('Selected modal image:', modalImages[index]);
-        
+
         // Retire data-active de toutes les images
         modalImages.forEach((modalImg) => {
             delete modalImg.dataset.active;
