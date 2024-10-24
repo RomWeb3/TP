@@ -79,11 +79,11 @@ const carousel4 = document.querySelector('.carousel4');
 const openModal = document.querySelectorAll('.wrap');
 const modalImg = document.querySelectorAll('.modalImg');
 
-// openModal.forEach(button => {
-//     button.addEventListener('click', () => {
-//         carousel.classList.add('active');
-//     });
-// });
+openModal.forEach(button => {
+    button.addEventListener('click', () => {
+        carousel.classList.add('active');
+    });
+});
 
 function resetCarousel(carousel) {
     const slides = carousel.querySelector("[data-slides]");
