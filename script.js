@@ -85,27 +85,46 @@ const modalImg = document.querySelectorAll('.modalImg');
 //     });
 // });
 
-// Ajout du gestionnaire d'événements pour ouvrir la bonne image dans la modal
+function resetCarousel(carousel) {
+    const slides = carousel.querySelector("[data-slides]");
+    const allSlides = slides.querySelectorAll('.modalImg');
+    
+    // Retire data-active de toutes les images
+    allSlides.forEach(slide => {
+        delete slide.dataset.active;
+    });
+    
+    // Remet data-active sur la première image
+    if (allSlides.length > 0) {
+        allSlides[0].dataset.active = true;
+    }
+}
+
 document.querySelectorAll('.imagesT img').forEach((img) => {
     img.addEventListener('click', () => {
-        const index = parseInt(img.getAttribute('data-image')); // Conversion en nombre
-        const modalImages = document.querySelectorAll('.carousel [data-slides] .modalImg');
+        const index = parseInt(img.getAttribute('data-image'));
+        const slides = carousel.querySelector("[data-slides]");
+        const allSlides = slides.querySelectorAll('.modalImg');
         
-        console.log('Index clicked:', index);
-        console.log('Number of modal images:', modalImages.length);
-        console.log('Selected modal image:', modalImages[index]);
-
         // Retire data-active de toutes les images
-        modalImages.forEach((modalImg) => {
-            delete modalImg.dataset.active;
+        allSlides.forEach(slide => {
+            delete slide.dataset.active;
         });
-
-        // Ajoute data-active à l'image correspondante
-        modalImages[index].dataset.active = true;
         
-        // Ouvre la modal
+        // Ajoute data-active à l'image correspondante
+        if (allSlides[index]) {
+            allSlides[index].dataset.active = true;
+        }
+        
         carousel.classList.add('active');
     });
+});
+
+carousel.addEventListener('click', (e) => {
+    if (!e.target.closest('.modalImg') && !e.target.closest('[data-carousel-button]')) {
+        carousel.classList.remove('active');
+        resetCarousel(carousel);
+    }
 });
 
 // Gestion des autres modals
