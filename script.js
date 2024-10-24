@@ -91,6 +91,10 @@ document.querySelectorAll('.imagesT img').forEach((img) => {
         const index = parseInt(img.getAttribute('data-image')); // Conversion en nombre
         const modalImages = document.querySelectorAll('.carousel [data-slides] .modalImg');
         
+        console.log('Index clicked:', index);
+        console.log('Number of modal images:', modalImages.length);
+        console.log('Selected modal image:', modalImages[index]);
+        
         // Retire data-active de toutes les images
         modalImages.forEach((modalImg) => {
             delete modalImg.dataset.active;
