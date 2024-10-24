@@ -88,17 +88,19 @@ openModal.forEach(button => {
 // Ajout du gestionnaire d'événements pour ouvrir la bonne image dans la modal
 document.querySelectorAll('.imagesT img').forEach((img) => {
     img.addEventListener('click', () => {
-        const index = img.getAttribute('data-image'); // Récupère l'index de l'image
-        const modalImages = document.querySelectorAll('.modalImg'); // Sélectionne toutes les images de la modal
-
-        // Masque toutes les images de la modal
+        const index = parseInt(img.getAttribute('data-image')); // Conversion en nombre
+        const modalImages = document.querySelectorAll('.carousel [data-slides] .modalImg');
+        
+        // Retire data-active de toutes les images
         modalImages.forEach((modalImg) => {
-            modalImg.style.display = 'none';
+            delete modalImg.dataset.active;
         });
 
-        // Affiche l'image correspondante
-        modalImages[index].style.display = 'block'; // Affiche l'image correspondante
-        carousel.classList.add('active'); // Ouvre la modal
+        // Ajoute data-active à l'image correspondante
+        modalImages[index].dataset.active = true;
+        
+        // Ouvre la modal
+        carousel.classList.add('active');
     });
 });
 
