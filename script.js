@@ -76,84 +76,98 @@ const carousel = document.querySelector('.carousel');
 const carousel2 = document.querySelector('.carousel2');
 const carousel3 = document.querySelector('.carousel3');
 const carousel4 = document.querySelector('.carousel4');
-const openModal = document.querySelectorAll('.wrap');
-const modalImg = document.querySelectorAll('.modalImg');
-
-openModal.forEach(button => {
-    button.addEventListener('click', () => {
-        carousel.classList.add('active');
-    });
-});
 
 function resetCarousel(carousel) {
     const slides = carousel.querySelector("[data-slides]");
     const allSlides = slides.querySelectorAll('.modalImg');
     
-    // Retire data-active de toutes les images
     allSlides.forEach(slide => {
         delete slide.dataset.active;
     });
     
-    // Remet data-active sur la première image
     if (allSlides.length > 0) {
         allSlides[0].dataset.active = true;
     }
 }
 
-document.querySelectorAll('.imagesT img').forEach((img) => {
-    img.addEventListener('click', () => {
-        const index = parseInt(img.getAttribute('data-image'));
-        const slides = carousel.querySelector("[data-slides]");
+// Gestion des images de terrassement
+document.querySelectorAll('.wrap').forEach((wrap) => {
+    const img = wrap.querySelector('img');
+    if (img) {
+        wrap.addEventListener('click', () => {
+            const index = parseInt(img.getAttribute('data-image'));
+            const slides = carousel.querySelector("[data-slides]");
+            const allSlides = slides.querySelectorAll('.modalImg');
+            
+            allSlides.forEach(slide => {
+                delete slide.dataset.active;
+            });
+            
+            if (allSlides[index]) {
+                allSlides[index].dataset.active = true;
+            }
+            
+            carousel.classList.add('active');
+        });
+    }
+});
+
+// Gestion des images d'assainissement
+document.querySelectorAll('.wrap2').forEach((wrap, index) => {
+    wrap.addEventListener('click', () => {
+        const slides = carousel2.querySelector("[data-slides]");
         const allSlides = slides.querySelectorAll('.modalImg');
         
-        // Retire data-active de toutes les images
         allSlides.forEach(slide => {
             delete slide.dataset.active;
         });
         
-        // Ajoute data-active à l'image correspondante
         if (allSlides[index]) {
             allSlides[index].dataset.active = true;
         }
         
-        carousel.classList.add('active');
-    });
-});
-
-carousel.addEventListener('click', (e) => {
-    if (!e.target.closest('.modalImg') && !e.target.closest('[data-carousel-button]')) {
-        carousel.classList.remove('active');
-        resetCarousel(carousel);
-    }
-});
-
-// Gestion des autres modals
-const openModal2 = document.querySelectorAll('.wrap2');
-
-openModal2.forEach(button => {
-    button.addEventListener('click', () => {
         carousel2.classList.add('active');
     });
 });
 
-const openModal3 = document.querySelectorAll('.wrap3');
-
-openModal3.forEach(button => {
-    button.addEventListener('click', () => {
-        carousel3.classList.add('active'); 
+// Gestion des images VRD
+document.querySelectorAll('.wrap3').forEach((wrap, index) => {
+    wrap.addEventListener('click', () => {
+        const slides = carousel3.querySelector("[data-slides]");
+        const allSlides = slides.querySelectorAll('.modalImg');
+        
+        allSlides.forEach(slide => {
+            delete slide.dataset.active;
+        });
+        
+        if (allSlides[index]) {
+            allSlides[index].dataset.active = true;
+        }
+        
+        carousel3.classList.add('active');
     });
 });
 
-const openModal4 = document.querySelectorAll('.wrap4');
-
-openModal4.forEach(button => {
-    button.addEventListener('click', () => {
+// Gestion des images de goudronnage
+document.querySelectorAll('.wrap4').forEach((wrap, index) => {
+    wrap.addEventListener('click', () => {
+        const slides = carousel4.querySelector("[data-slides]");
+        const allSlides = slides.querySelectorAll('.modalImg');
+        
+        allSlides.forEach(slide => {
+            delete slide.dataset.active;
+        });
+        
+        if (allSlides[index]) {
+            allSlides[index].dataset.active = true;
+        }
+        
         carousel4.classList.add('active');
     });
 });
 
+// Gestion des boutons carousel
 const buttons = document.querySelectorAll('[data-carousel-button]');
-
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         const offset = button.dataset.carouselButton === 'next' ? 1 : -1;
@@ -172,28 +186,24 @@ buttons.forEach(button => {
     });
 });
 
-const imagesModal = document.querySelectorAll('.modalImg');
-
-carousel.addEventListener('click', (e) => {
-    if (!e.target.closest('.modalImg') && !e.target.closest('[data-carousel-button]')) {
-        carousel.classList.remove('active');
-    }
+// Gestion de la fermeture des modales
+[carousel, carousel2, carousel3, carousel4].forEach(carousel => {
+    carousel.addEventListener('click', (e) => {
+        if (!e.target.closest('.modalImg') && !e.target.closest('[data-carousel-button]') && !e.target.closest('.close-modal')) {
+            carousel.classList.remove('active');
+            resetCarousel(carousel);
+        }
+    });
 });
 
-carousel2.addEventListener('click', (e) => {
-    if (!e.target.closest('.modalImg') && !e.target.closest('[data-carousel-button]')) {
-        carousel2.classList.remove('active');
-    }
-});
-
-carousel3.addEventListener('click', (e) => {
-    if (!e.target.closest('.modalImg') && !e.target.closest('[data-carousel-button]')) {
-        carousel3.classList.remove('active');
-    }
-});
-
-carousel4.addEventListener('click', (e) => {
-    if (!e.target.closest('.modalImg') && !e.target.closest('[data-carousel-button]')) {
-        carousel4.classList.remove('active');
-    }
+// Gestion des boutons de fermeture
+const closeButtons = document.querySelectorAll('.close-modal');
+closeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modalCarousel = button.closest('[data-carousel]');
+        if (modalCarousel) {
+            modalCarousel.classList.remove('active');
+            resetCarousel(modalCarousel);
+        }
+    });
 });
