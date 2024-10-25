@@ -271,6 +271,9 @@ nav ul li:hover a {
     display: flex;
     flex-flow: row wrap;
     transition: all 200ms ease-in-out;
+}
+
+.imagesT {
     margin-bottom: 12rem;
 }
 
